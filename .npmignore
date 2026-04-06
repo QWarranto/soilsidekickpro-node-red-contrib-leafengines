@@ -1,0 +1,65 @@
+# Development files
+.git/
+.gitignore
+.github/
+node_modules/
+npm-debug.log
+yarn.lock
+package-lock.json
+
+# Test files
+test/
+coverage/
+*.test.js
+*.spec.js
+
+# Documentation files (except README)
+CONTRIBUTING.md
+IMPLEMENTATION_SUMMARY.md
+SPECIALIZED_NODES_SUMMARY.md
+*.mdx
+
+# Example flows (include in package for users)
+# examples/
+
+# Build artifacts
+dist/
+build/
+*.tsbuildinfo
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+
+# Configuration files (except package.json)
+.eslintrc
+.prettierrc
+.tsconfig.json
+jsconfig.json
+
+# Log files
+*.log
+logs/
+
+# Coverage directory
+.coverage/
+.nyc_output/
+
+# TypeScript declaration files (if we add them later)
+*.d.ts

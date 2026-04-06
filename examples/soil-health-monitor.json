@@ -1,0 +1,168 @@
+[
+    {
+        "id": "leafengines-config-1",
+        "type": "leafengines-config",
+        "name": "My Farm API",
+        "apiKey": "ak_sandbox_your_key_here",
+        "apiUrl": "https://[project].supabase.co/functions/v1",
+        "tier": "starter"
+    },
+    {
+        "id": "inject-1",
+        "type": "inject",
+        "name": "Daily 8 AM",
+        "props": [
+            {
+                "p": "payload",
+                "v": "{\"county_fips\": \"48453\"}",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "0 8 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 120,
+        "y": 160,
+        "wires": [
+            [
+                "leafengines-soil-1"
+            ]
+        ]
+    },
+    {
+        "id": "leafengines-soil-1",
+        "type": "leafengines-soil",
+        "name": "Soil Analysis",
+        "config": "leafengines-config-1",
+        "countyFips": "",
+        "outputFormat": "summary",
+        "x": 320,
+        "y": 160,
+        "wires": [
+            [
+                "function-1",
+                "debug-1"
+            ]
+        ]
+    },
+    {
+        "id": "function-1",
+        "type": "function",
+        "name": "Check Soil Health",
+        "func": "// Check soil parameters against thresholds\nconst thresholds = {\n    organic_matter: { min: 2.0, optimal: 3.0 },\n    ph_level: { min: 6.0, max: 7.5, optimal: 6.8 },\n    nitrogen: { min: 30, optimal: 50 }\n};\n\nconst soil = msg.payload;\nconst alerts = [];\n\n// Check organic matter\nif (soil.organic_matter < thresholds.organic_matter.min) {\n    alerts.push(`Low organic matter: ${soil.organic_matter}% (min: ${thresholds.organic_matter.min}%)`);\n}\n\n// Check pH\nif (soil.ph_level < thresholds.ph_level.min || soil.ph_level > thresholds.ph_level.max) {\n    alerts.push(`pH out of range: ${soil.ph_level} (optimal: ${thresholds.ph_level.optimal})`);\n}\n\n// Check nitrogen\nif (soil.nitrogen < thresholds.nitrogen.min) {\n    alerts.push(`Low nitrogen: ${soil.nitrogen} ppm (min: ${thresholds.nitrogen.min} ppm)`);\n}\n\n// Add cache info\nif (soil.cache_info && soil.cache_info.stale) {\n    alerts.push(`⚠️ Using stale data (${Math.floor(soil.cache_info.age_seconds / 3600)} hours old)`);\n}\n\n// Create alert message\nif (alerts.length > 0) {\n    msg.payload = {\n        alert: true,\n        county_fips: soil.county_fips,\n        timestamp: new Date().toISOString(),\n        issues: alerts,\n        soil_data: soil\n    };\n    msg.topic = \"soil/alert\";\n} else {\n    msg.payload = {\n        alert: false,\n        county_fips: soil.county_fips,\n        timestamp: new Date().toISOString(),\n        message: \"Soil health is good\",\n        soil_data: soil\n    };\n    msg.topic = \"soil/status\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 160,
+        "wires": [
+            [
+                "switch-1"
+            ]
+        ]
+    },
+    {
+        "id": "switch-1",
+        "type": "switch",
+        "name": "Check for Alerts",
+        "property": "payload.alert",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 720,
+        "y": 160,
+        "wires": [
+            [
+                "email-1",
+                "debug-2"
+            ],
+            [
+                "debug-3"
+            ]
+        ]
+    },
+    {
+        "id": "email-1",
+        "type": "e-mail",
+        "name": "Send Alert Email",
+        "server": "smtp.gmail.com",
+        "port": "587",
+        "secure": false,
+        "tls": true,
+        "namex": "",
+        "dname": "",
+        "x": 920,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "debug-1",
+        "type": "debug",
+        "name": "Soil Data",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "debug-2",
+        "type": "debug",
+        "name": "Alert Details",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "debug-3",
+        "type": "debug",
+        "name": "Good Status",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "comment-1",
+        "type": "comment",
+        "name": "LeafEngines Soil Health Monitor",
+        "info": "This flow demonstrates automated soil health monitoring using LeafEngines API.\n\nFeatures:\n- Daily soil analysis at 8 AM\n- Threshold checking for key parameters\n- Alert generation for issues\n- Email notifications for alerts\n- Cache awareness (warns about stale data)\n\nSetup:\n1. Replace API key in config node\n2. Configure email node with SMTP settings\n3. Adjust soil thresholds as needed\n4. Deploy and monitor!",
+        "x": 120,
+        "y": 80,
+        "wires": []
+    }
+]

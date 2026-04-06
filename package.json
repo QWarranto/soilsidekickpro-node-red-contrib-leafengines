@@ -1,0 +1,71 @@
+{
+  "name": "node-red-contrib-leafengines",
+  "version": "1.0.0",
+  "description": "Node-RED nodes for LeafEngines Agricultural Intelligence API - Soil analysis, weather, crop recommendations, carbon credits, and MCP integration",
+  "keywords": [
+    "node-red",
+    "leafengines",
+    "agriculture",
+    "soil",
+    "weather",
+    "crop",
+    "environmental",
+    "api",
+    "mcp",
+    "precision-agriculture",
+    "farm",
+    "iot",
+    "automation",
+    "carbon-credits",
+    "water-quality"
+  ],
+  "node-red": {
+    "version": ">=3.0.0",
+    "nodes": {
+      "leafengines-config": "nodes/config.js",
+      "leafengines-soil": "nodes/soil.js",
+      "leafengines-weather": "nodes/weather.js",
+      "leafengines-crop": "nodes/crop.js",
+      "leafengines-water": "nodes/water.js",
+      "leafengines-carbon": "nodes/carbon.js",
+      "leafengines-prescription": "nodes/prescription.js",
+      "leafengines-batch": "nodes/batch.js",
+      "leafengines-query": "nodes/query.js"
+    }
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "@modelcontextprotocol/sdk": "^1.29.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "node-red": "^4.1.8",
+    "node-red-node-test-helper": "^0.3.0",
+    "mocha": "^10.0.0"
+  },
+  "scripts": {
+    "test": "mocha test/basic-test.js",
+    "dev": "node-red -u ~/.node-red"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soilsidekickpro/node-red-contrib-leafengines.git"
+  },
+  "author": "SoilSidekick Pro <support@soilsidekickpro.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soilsidekickpro/node-red-contrib-leafengines/issues"
+  },
+  "homepage": "https://soilsidekickpro.com/api-docs",
+  "funding": {
+    "type": "individual",
+    "url": "https://soilsidekickpro.com/podcast"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
