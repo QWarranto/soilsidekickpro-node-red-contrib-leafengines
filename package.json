@@ -1,7 +1,7 @@
 {
   "name": "node-red-contrib-leafengines",
-  "version": "1.0.0",
-  "description": "Node-RED nodes for LeafEngines Agricultural Intelligence API - Soil analysis, weather, crop recommendations, carbon credits, and MCP integration",
+  "version": "1.0.1",
+  "description": "Node-RED nodes for LeafEngines Agricultural Intelligence - Free tier access, no API key needed. USDA soil data, EPA water quality, crop recommendations. Works immediately with test key leaf-test-370df0a2e62e.",
   "keywords": [
     "node-red",
     "leafengines",
@@ -52,17 +52,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/soilsidekickpro/node-red-contrib-leafengines.git"
+    "url": "git+https://github.com/QWarranto/soilsidekickpro-node-red-contrib-leafengines.git"
   },
   "author": "SoilSidekick Pro <support@soilsidekickpro.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/soilsidekickpro/node-red-contrib-leafengines/issues"
   },
-  "homepage": "https://soilsidekickpro.com/api-docs",
+  "homepage": "https://github.com/QWarranto/soil-sidekick-pro-guide/blob/main/docs/partnerships/NODE_RED_DEEP_DIVE.md",
   "funding": {
     "type": "individual",
-    "url": "https://soilsidekickpro.com/podcast"
+    "url": "https://buy.stripe.com/14A7sL30y8bR2F4fbgaMU02"
   },
   "engines": {
     "node": ">=18.0.0",
