@@ -8,9 +8,9 @@ module.exports = function(RED) {
         RED.nodes.createNode(this, config);
         
         this.name = config.name;
-        this.apiKey = config.apiKey;
-        this.apiUrl = config.apiUrl || 'https://[project].supabase.co/functions/v1';
-        this.tier = config.tier || 'sandbox';
+        this.apiKey = config.apiKey || 'leaf-test-370df0a2e62e';
+        this.apiUrl = config.apiUrl || 'https://wzgnxkoeqzvueypwzvyn.supabase.co/functions/v1/get-soil-data';
+        this.tier = config.tier || 'free';
         
         // Store credentials securely
         if (this.credentials && this.credentials.apiKey) {
@@ -19,8 +19,8 @@ module.exports = function(RED) {
         
         // Validate API key format
         this.isValidKey = () => {
-            if (!this.apiKey) return false;
-            return this.apiKey.startsWith('ak_');
+            if (!this.apiKey) return true; // Free tier allowed
+            return this.apiKey.startsWith('ak_') || this.apiKey === 'leaf-test-370df0a2e62e';
         };
         
         // Get base URL based on tier
