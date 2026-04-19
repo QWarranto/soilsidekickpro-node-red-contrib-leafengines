@@ -92,6 +92,9 @@ This video serves as a **non-traditional sales and marketing tool** you can leve
 
 ---
 
+## ⚠️ Note: npm page shows outdated instructions
+The npm package page (https://www.npmjs.com/package/node-red-contrib-leafengines) currently displays outdated Quick Start instructions. **Ignore the podcast/sandbox key instructions** - use the correct information below.
+
 ## 🚀 Quick Start
 
 ### 1. Get Your API Key
