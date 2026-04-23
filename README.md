@@ -59,7 +59,7 @@ curl -H "x-api-key: leaf-test-370df0a2e62e" \
 
 ### **Option 3: Production API (When You Need More)**
 Only request when free tier limits are exceeded:
-1. Visit: https://soilsidekickpro.com/api-docs
+1. Visit: https://soilsidekickpro.com/api-docs                                                                                             or via Stripe checkout (Starter: $49 Founder Pricing vs $149/mo after June 1, 2026)  ->https://buy.stripe.com/14A7sL30y8bR2F4fbgaMU02
 2. Choose your plan (Starter, Pro, Enterprise)
 3. Get your API key
 
