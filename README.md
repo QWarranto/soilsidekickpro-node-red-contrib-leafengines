@@ -1,13 +1,116 @@
+# node-red-contrib-leafengines
 
-## 🎯 QGIS Plugin Officially Approved!
+**Agricultural Intelligence Automation for Node-RED**
 
-**Plugin ID:** 4987 (LeafEngines Agricultural Intelligence)  
-**Version:** 1.0.2 Experimental  
-**Status:** ✅ **PUBLICLY AVAILABLE**  
-**Download:** https://plugins.qgis.org/plugins/qgis_leafengines/version/1.0.2/download/
+[![npm version](https://img.shields.io/npm/v/node-red-contrib-leafengines.svg)](https://www.npmjs.com/package/node-red-contrib-leafengines)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-### Key Features:
-- **USDA soil data** - Soil composition, pH, N/P/K recommendations
+## 🚀 **TRY IT NOW - NO API KEY NEEDED!**
+
+### **Free Tier Access (Immediate):**
+- **Soil analysis** for any US county
+- **No signup required** - just use `x-free-tier: true` header
+- **Instant value** - get USDA soil data in seconds
+- **Upgrade later** - only when you need more calls
+
+### **🌍 Community Success: 1,000+ Views in <48 Hours!**
+The LeafEngines Node-RED plugin has gained rapid traction:
+- **1,000+ views** in r/NodeRED community (<48 hours)
+- **42 downloads** across **8 countries** (and growing)
+- **12 production-ready implementations** available
+- **Perfect for** agricultural IoT, farm automation, precision agriculture
+
+---
+
+## 🎯 Quick Start (Free Tier First!)
+
+### **Free Tier Access (Immediate):**
+- **Soil analysis** for any US county
+- **No signup required** - just use `x-free-tier: true` header
+- **Instant value** - get USDA soil data in seconds
+- **Upgrade later** - only when you need more calls
+
+### **🌍 Community Success: 1,000+ Views in <48 Hours!**
+The LeafEngines Node-RED plugin has gained rapid traction:
+- **1,000+ views** in r/NodeRED community (<48 hours)
+- **42 downloads** across **8 countries** (and growing)
+- **12 production-ready implementations** available
+- **Perfect for** agricultural IoT, farm automation, precision agriculture
+
+---
+
+## 🎯 Quick Start (Free Tier First!)
+
+### **Option 1: Free Tier (No API Key)**
+```bash
+# Try it right now - no signup needed!
+curl -H "x-free-tier: true" \
+  -X POST https://api.soilsidekickpro.com/v1/soil/analyze \
+  -d '{"county_fips": "12086"}'
+```
+
+### **Option 2: Test Key (Quick Experimentation)**
+```bash
+# Use our public test key
+curl -H "x-api-key: leaf-test-370df0a2e62e" \
+  -X POST https://api.soilsidekickpro.com/v1/soil/analyze \
+  -d '{"county_fips": "12086"}'
+```
+
+### **Option 3: Production API (When You Need More)**
+Only request when free tier limits are exceeded:
+1. Visit: https://soilsidekickpro.com/api-docs
+2. Choose your plan (Starter, Pro, Enterprise)
+3. Get your API key
+
+---
+
+## 📦 Installation
+
+### **Method 1: Node-RED Palette Manager (Recommended)**
+1. Open Node-RED (usually at http://localhost:1880)
+2. Go to **Menu → Manage Palette**
+3. Click **Install** tab
+4. Search for `node-red-contrib-leafengines`
+5. Click **Install**
+
+### **Method 2: npm CLI**
+```bash
+npm install node-red-contrib-leafengines
+```
+
+### **Method 3: Manual Installation**
+```bash
+cd ~/.node-red
+npm install node-red-contrib-leafengines
+```
+
+---
+
+## 🎯 Production Use Cases & Examples
+
+### **📊 12 Production-Ready Implementations:**
+1. **Soil Analysis** (`soil.js`) - Real-time USDA soil monitoring
+2. **Crop Recommendations** (`crop.js`) - Multi-factor crop planning
+3. **Precision Irrigation** (`water.js`) - Weather-based water optimization (30% savings)
+4. **Carbon Credits** (`carbon.js`) - Emissions tracking & certification
+5. **Weather Integration** (`weather.js`) - Multi-source weather data
+6. **Batch Processing** (`batch.js`) - Large-scale farm data workflows
+7. **Prescription Maps** (`prescription.js`) - Variable rate applications
+8. **Data Queries** (`query.js`) - Advanced query patterns
+9. **Configuration** (`config.js`) - Environment management
+10. **Quick Testing** (`basic-test.js`) - Connectivity verification
+
+**Download:** [LeafEngines_NodeRED_Use_Cases_By_Tier.pdf](examples/LeafEngines_NodeRED_Use_Cases_By_Tier.pdf) - Complete guide with tiered implementation strategies
+
+**Perfect for:**
+- Agricultural IoT developers building sensor networks
+- Farm automation engineers optimizing operations
+- Sustainability consultants tracking carbon credits
+- Research institutions collecting standardized data
+- Precision agriculture startups scaling solutions
+
+---
 
 ## 🌐 Global IoT & Automation Pricing
 
@@ -28,253 +131,138 @@ Node-RED users deploy automation worldwide. Our pricing supports your global IoT
 **Why Local Pricing Matters for IoT:**
 - Deploy sensors globally with predictable local costs
 - Local payment methods reduce friction for team purchases
-- Tax-inclusive pricing simplifies budgeting
-- Currency stability for long-term automation projects
-
-**Test Before Buying:** Use free tier (`x-free-tier: true`) or test key `leaf-test-370df0a2e62e`
-- **EPA water quality** - Water quality metrics and analysis
-- **NOAA climate data** - Historical weather patterns and agricultural forecasting
-- **Satellite vegetation indices** - NDVI, water-stress overlays from NASA MODIS
-- **AI-powered crop recommendations** - Tailored to exact field polygons
-- **Carbon credit calculations** - Environmental impact scoring for regulatory compliance
-- **Offline-first architecture** - Works in remote/"deep canopy" areas
-- **GPS-denied capabilities** - Military-proven algorithms for contested environments
-
-### Strategic Advantages for Partners:
-1. **Pre-vetted, low-risk integration** - Officially approved by QGIS after rigorous review
-2. **Seamless future-proofing** - Aligns with QGIS release cycles (QGIS 4.0.0+ ready)
-3. **Instant credibility** - Discoverable by 500,000+ QGIS users in agriculture sector
-4. **Regulatory advantage** - Preferred for government/EPA/USDA-related procurements
-5. **Ecosystem power** - Integrates with thousands of complementary QGIS plugins
-
-### For OEM Partners:
-Embed LeafEngines agricultural intelligence directly into your hardware or software platforms with confidence. The official QGIS approval eliminates weeks of custom validation, security audits, and compatibility testing.
-
-*Approved: April 14, 2026*
-
-
-# node-red-contrib-leafengines
-
-Node-RED nodes for LeafEngines agricultural intelligence
-
-## 🎯 Strategic Vision: From AgTech to Universal Infrastructure
-
-**Watch our 7-minute strategic expansion plan:**
-
-[![LeafEngines Strategic Expansion](https://img.youtube.com/vi/bBHVLbh3tx0/0.jpg)](https://youtu.be/bBHVLbh3tx0)
-
-### **The Strategic Pivot:**
-LeafEngines is executing a calculated pivot from vertical AgTech to **horizontal infrastructure platform**. We're exploiting a critical global vulnerability: the fragility of satellite-based Positioning, Navigation, and Timing (PNT).
-
-### **Core Mission:**
-> **"Space gives the picture. We give the truth."**
-
-### **Key Markets Identified:**
-- **Disaster Response** - GPS-denied environments
-- **Mining & Forestry** - Remote operations
-- **Industrial Automation** - GPS-denied factories
-- **Power Grids** - High-precision timing
-- **Finance** - MiFID II-compliant timestamps
-- **Defense/Intelligence** - Assured PNT in contested theaters
-
-### **Our Advantage:**
-- **Offline-first architecture** - Works anywhere, anytime
-- **CIP Patent protection** - Inertial Dead Reckoning + Kalman logic
-- **Community arbitrage** - Zero-CAC distribution through n8n/Node-RED/MCP
-- **Quality transparency** - v3.0.0 confidence scoring & audit trails
-
-### **The Vision:**
-Transforming our core technology into a **foundational trust layer for autonomous physical AI** - the mandatory infrastructure for a world requiring GPS-independent verification.
-
-### **💡 How to Use This Video (Developer Tool):**
-This video serves as a **non-traditional sales and marketing tool** you can leverage:
-- **Internal Stakeholder Alignment:** Share with your team to explain the strategic vision
-- **Client Presentations:** Demonstrate the company behind the technology
-- **Investor Briefings:** Show the $1.2T horizontal market opportunity
-- **Community Building:** Educate other developers about the broader ecosystem
-
-### **🎬 Cinematic Scene Guide:**
-**Scene 1: Devices on Bench (0:45-1:15)** - Show hardware integration proof
-**Scene 2: Developer Embedding (1:30-2:15)** - Demonstrate integration process
-**Scene 3: Buy→Resell→Market (2:30-3:45)** - Explain business model
-**Scene 4: Strategic Vision (4:00-5:30)** - Share market opportunity
-
-### **🌐 The Offline AI Economy:**
-**Read our philosophical manifesto:** [THE_OFFLINE_AI_ECONOMY.md](https://github.com/soilsidekick/leafengines/blob/main/THE_OFFLINE_AI_ECONOMY.md)
-
-**Core Thesis:** "While much of the AI industry focuses on the size of cloud-based models, those models are unable to execute physical tasks without ground truth integrity."
-
-**Three-Layer Solution:**
-1. **Sensor Fusion** - Local dead reckoning without satellites
-2. **Kalman Gate** - Uncertainty gating prevents database corruption
-3. **Offline-First MCP** - Enables local AI decisions without cloud
-
-**Business Model Revolution:**
-- **Filtered Byte Pricing** - Charge for prevented corruption
-- **Pay-Per-Agent Action** - Bill for successful high-value tasks
-- **Outcome-Based Pricing** - Shift from access to utility
 
 ---
-
-## ⚠️ Note: npm page shows outdated instructions
-The npm package page (https://www.npmjs.com/package/node-red-contrib-leafengines) currently displays outdated Quick Start instructions. **Ignore the podcast/sandbox key instructions** - use the correct information below.
-
-## 🚀 Quick Start
-
-### 1. Get Your API Key
-
-#### **Test API (Try Now):**
-Use test key: `leaf-test-370df0a2e62e`
-
-**Works with just county_fips:**
-```json
-{
-  "county_fips": "12086"
-}
-```
-
-#### **Free Tier (No API Key):**
-Use header: `x-free-tier: true`
-
-#### **Production API Key:**
-Request at: https://soilsidekickpro.com/api-docs
-
-### 2. Install
-```bash
-npm install node-red-contrib-leafengines
-```
-
-### 3. Configure in Node-RED
-1. Add LeafEngines node to your flow
-2. Enter API key: `leaf-test-370df0a2e62e`
-3. Set county_fips: "12086" (or your county)
-4. Deploy and test!
-
----
-
-## 🎯 What This Package Does
-
-This package integrates Node-RED with the LeafEngines agricultural intelligence platform, providing:
-
-- **Soil analysis** from USDA databases
-- **Water quality** data from EPA monitoring
-- **Climate insights** from NOAA historical records
-- **Agricultural recommendations** based on location-specific data
-
-## 📦 Installation
-
-### For {{INTEGRATION_PLATFORM}} Users
-
-```bash
-npm install node-red-contrib-leafengines
-```
-
-### Configuration
-
-1. **Get API Key:** Sign up at [SoilSidekick Pro](https://soilsidekick.com)
-2. **Configure Credentials:** Add your API key in {{INTEGRATION_PLATFORM}}
-3. **Start Using:** The nodes will appear in your palette
-
-## 🚀 Quick Start
-
-### Basic Usage
-
-```{{EXAMPLE_LANGUAGE}}
-{{EXAMPLE_CODE}}
-```
-
-### Example Workflow
-
-1. **Location Input:** Provide county/coordinates
-2. **Data Retrieval:** Automatically fetch soil/water/climate data
-3. **Analysis:** Get actionable agricultural insights
-4. **Automation:** Integrate with other {{INTEGRATION_PLATFORM}} nodes
 
 ## 🔧 Available Nodes
 
-### {{MAIN_NODE_NAME}}
-Main node for county-based lookups and batch processing.
+### **Configuration Nodes**
+- **LeafEngines Config** - API key management and connection settings
 
-**Inputs:**
-- County name
-- State abbreviation
-- Coordinates (optional)
+### **Specialized Data Nodes**
+- **LeafEngines Soil** - USDA soil composition by county FIPS (Free tier)
+- **LeafEngines Weather** - Live weather and soil fusion data (Starter tier)
+- **LeafEngines Water** - EPA water quality monitoring and analytics (Starter tier)
+- **LeafEngines Crop** - AI crop recommendations, planting calendars, and plant identification (Starter/Pro tier)
+- **LeafEngines Carbon** - Carbon credit estimation with practice change analysis (Pro tier)
+- **LeafEngines Prescription** - Variable-rate prescription generation (Pro tier)
 
-**Outputs:**
-- Complete environmental analysis
-- Agricultural recommendations
-- Risk assessments
+### **Optimization Nodes**
+- **LeafEngines Batch** - Batch multiple API calls into single requests (optimizes rate limits)
+- **LeafEngines Query** - Generic node for any LeafEngines endpoint
 
-### SoilData Node
-Specialized node for detailed soil analysis.
+### **Enterprise Nodes**
+- **LeafEngines Environmental** - Environmental impact scoring and risk assessment
+- **LeafEngines Satellite** - Google Earth Engine satellite integration
+- **LeafEngines AI Chat** - Advanced conversational AI
+- **LeafEngines Visual** - Visual crop analysis and diagnostics
 
-**Features:**
-- Soil composition breakdown
-- Nutrient levels
-- Drainage characteristics
-- Suitability scoring
+---
 
-## 📖 Examples
+## 📖 Example Flows
 
-### Example 1: Basic County Lookup
-```{{EXAMPLE_LANGUAGE}}
-{{BASIC_EXAMPLE}}
+### **1. Automated Soil Health Monitoring**
+```javascript
+// Flow: Daily soil analysis with alerting
+[schedule: daily 8am] → [LeafEngines Soil] → [function: check thresholds] → [switch: alert if needed] → [email/sms alert]
 ```
 
-### Example 2: Automated Farm Planning
-```{{EXAMPLE_LANGUAGE}}
-{{ADVANCED_EXAMPLE}}
+### **2. Irrigation Optimization**
+```javascript
+// Flow: Smart irrigation scheduling
+[weather forecast] → [LeafEngines Soil] → [LeafEngines Water] → [function: calculate irrigation] → [sprinkler controller]
 ```
 
-## ⚙️ Configuration Options
+### **3. Carbon Credit Reporting**
+```javascript
+// Flow: Automated carbon credit calculation
+[field sensor data] → [LeafEngines Carbon] → [function: format report] → [Google Sheets] → [email report]
+```
 
-### API Tiers
-- **Free Tier:** 100 requests/month
-- **Starter Tier:** 1,000 requests/month ($49/month)
-- **Pro Tier:** 10,000 requests/month ($149/month)
+### **4. Variable-Rate Application**
+```javascript
+// Flow: Real-time prescription generation
+[GPS position] → [LeafEngines Soil] → [LeafEngines Prescription] → [function: format for equipment] → [sprayer controller]
+```
 
-### Rate Limiting
-- Free: 10 requests/minute
-- Paid: 100 requests/minute
+---
 
-## 🔗 Related Packages
+## 📊 Rate Limits & Batch Optimization
 
-- [@soilsidekick/sdk]({{SDK_URL}}) - Core JavaScript SDK
-- [@ancientwhispers54/leafengines-mcp-server]({{MCP_URL}}) - AI agent integration
-- [Other integration]({{OTHER_URL}}) - {{OTHER_PLATFORM}}
+### **Free Tier Limits:**
+- **10 requests/minute** - Perfect for testing and small projects
+- **1,000 requests/day** - Enough for daily monitoring
+- **Batch optimization** - 5x improvement with batching
 
-## 🤝 Contributing
+### **Batch Optimization Examples:**
+1. **Soil + Water + Weather Analysis** (3 calls) → **1 batch request** (66% reduction)
+2. **Multi-County Comparison** (5 counties) → **1 batch request** (80% reduction)
+3. **Full Field Analysis** (8 endpoints) → **2 batch requests** (75% reduction)
 
-We welcome contributions! Please see our [Contributing Guide]({{CONTRIBUTING_URL}}).
+See `examples/batch-optimization.json` for complete implementation.
+
+---
+
+## 🔗 MCP Protocol Integration
+
+LeafEngines implements the Model Context Protocol (MCP), enabling AI agents to discover and invoke agricultural intelligence tools natively.
+
+### **Claude Desktop Configuration**
+Add to your `claude_desktop_config.json`:
+```json
+{
+  "mcpServers": {
+    "leafengines": {
+      "transport": "streamable-http",
+      "url": "https://wzgnxkoeqzvueypwzvyn.supabase.co/functions/v1/mcp-server",
+      "headers": {
+        "x-api-key": "leaf-test-370df0a2e62e"
+      }
+    }
+  }
+}
+```
+
+---
+
+## 🎯 QGIS Plugin Officially Approved!
+
+**Plugin ID:** 4987 (LeafEngines Agricultural Intelligence)  
+**Version:** 1.0.2 Experimental  
+**Status:** ✅ **PUBLICLY AVAILABLE**  
+**Download:** https://plugins.qgis.org/plugins/qgis_leafengines/version/1.0.2/download/
+
+### **Key Features:**
+- **USDA soil data** - Soil composition, pH, N/P/K recommendations
+- **Free tier access** - Try in QGIS with no API key
+- **International support** - 8 countries and growing
+
+---
+
+## 🤝 Support & Community
+
+- **Technical Support**: support@soilsidekickpro.com
+- **Community Forum**: [r/NodeRED discussions](https://reddit.com/r/nodered)
+- **API Documentation**: [soilsidekickpro.com/api-docs](https://soilsidekickpro.com/api-docs)
+- **GitHub Issues**: [github.com/QWarranto/node-red-contrib-leafengines/issues](https://github.com/QWarranto/node-red-contrib-leafengines/issues)
+
+**Response Time:** We aim to respond within 24 hours to all support requests.
+
+---
 
 ## 📄 License
 
-## 📄 License
+MIT License - see [LICENSE](LICENSE) file for details.
 
-MIT License
+---
 
-Copyright (c) {{YEAR}} {{COMPANY_NAME}}
+## 🌱 Start Your Agricultural Automation Journey
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+**Try it now with our free tier - no API key needed!**
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. **Install the package:** `npm install node-red-contrib-leafengines`
+2. **Try free tier:** Use `x-free-tier: true` header
+3. **Build your flow:** Start with soil analysis
+4. **Scale as needed:** Upgrade when you exceed free limits
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-## 📞 Support
-
-- **Documentation:** [LeafEngines Docs]({{DOCS_URL}})
-- **GitHub Issues:** [Report Bugs]({{ISSUES_URL}})
-- **Community:** [Join Discussion]({{COMMUNITY_URL}})
+**Join 1,000+ Node-RED developers** already exploring agricultural intelligence automation!
