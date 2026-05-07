@@ -1,268 +1,198 @@
-# node-red-contrib-leafengines
+# node-red-contrib-leafengines — Agricultural Intelligence for Node-RED
 
-**Agricultural Intelligence Automation for Node-RED**
+**Soil analysis, crop recommendations, and environmental intelligence** for Node-RED IoT/edge automation. Patent-protected algorithms. Works with free test key — no signup required.
 
-[![npm version](https://img.shields.io/npm/v/node-red-contrib-leafengines.svg)](https://www.npmjs.com/package/node-red-contrib-leafengines)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+## ⚡ Get Started Now
 
-## 🚀 **TRY IT NOW - NO API KEY NEEDED!**
+**Free tier — no signup, no credit card:**
+- **Test key:** `leaf-test-370df0a2e62e` (works immediately with any API call)
+- **Free header:** `x-free-tier: true` (no key needed at all)
 
-### **Free Tier Access (Immediate):**
-- **Soil analysis** for any US county
-- **No signup required** - just use `x-free-tier: true` header
-- **Instant value** - get USDA soil data in seconds
-- **Upgrade later** - only when you need more calls
+**Ready for production? Founder pricing ends June 1, 2026:**
+- [Starter — $10/mo → lifetime $49/mo lock →](https://buy.stripe.com/14A7sL30y8bR2F4fbgaMU02)
+- [Pro — $49/mo → lifetime $149/mo lock →](https://buy.stripe.com/cNi3cv1WuajZcfE7IOaMU03)
 
-### **🌍 Community Success: 1,000+ Views in <48 Hours!**
-The LeafEngines Node-RED plugin has gained rapid traction:
-- **1,000+ views** in r/NodeRED community (<48 hours)
-- **42 downloads** across **8 countries** (and growing)
-- **12 production-ready implementations** available
-- **Perfect for** agricultural IoT, farm automation, precision agriculture
+**Get a professional soil report (no coding required):** [soilcertify.com →](https://soilcertify.com)
 
 ---
 
-## 🎯 Quick Start (Free Tier First!)
+## 🌾 What It Does
 
-### **Free Tier Access (Immediate):**
-- **Soil analysis** for any US county
-- **No signup required** - just use `x-free-tier: true` header
-- **Instant value** - get USDA soil data in seconds
-- **Upgrade later** - only when you need more calls
+Transform Node-RED into an agricultural intelligence platform for IoT and edge automation:
 
-### **🌍 Community Success: 1,000+ Views in <48 Hours!**
-The LeafEngines Node-RED plugin has gained rapid traction:
-- **1,000+ views** in r/NodeRED community (<48 hours)
-- **42 downloads** across **8 countries** (and growing)
-- **12 production-ready implementations** available
-- **Perfect for** agricultural IoT, farm automation, precision agriculture
+- **Soil Analysis** — USDA soil composition, nutrient levels, health scoring
+- **Water Quality Monitoring** — EPA water data, contamination risk assessment
+- **Crop Recommendations** — Location-specific planting advice, yield optimization
+- **Carbon Credit Calculations** — Emissions tracking, sustainability reporting
+- **Weather Data Fusion** — NOAA climate insights, forecast integration
+- **Satellite Vegetation** — NDVI, water-stress overlays from NASA MODIS
+- **Offline-First** — Works in remote/deep canopy areas with GPS-denied capabilities
 
----
+## 🚀 Quick Start
 
-## 🎯 Quick Start (Free Tier First!)
+### Install
 
-### **Option 1: Free Tier (No API Key)**
+**Node-RED Palette Manager (recommended):**
+1. Open Node-RED → Menu → Manage Palette → Install
+2. Search: `node-red-contrib-leafengines`
+3. Click Install
+
+**Or via npm:**
 ```bash
-# Try it right now - no signup needed!
+npm install node-red-contrib-leafengines
+```
+
+### Configure API Access
+
+**Free tier (immediate):**
+```bash
 curl -H "x-free-tier: true" \
-  -X POST https://api.soilsidekickpro.com/v1/soil/analyze \
+  -X POST https://wzgnxkoeqzvueypwzvyn.supabase.co/functions/v1/get-soil-data \
   -d '{"county_fips": "12086"}'
 ```
 
-### **Option 2: Test Key (Quick Experimentation)**
+**Test key (immediate):**
 ```bash
-# Use our public test key
 curl -H "x-api-key: leaf-test-370df0a2e62e" \
-  -X POST https://api.soilsidekickpro.com/v1/soil/analyze \
+  -X POST https://wzgnxkoeqzvueypwzvyn.supabase.co/functions/v1/get-soil-data \
   -d '{"county_fips": "12086"}'
 ```
 
-### **Option 3: Production API (When You Need More)**
-Only request when free tier limits are exceeded:
-1. Visit: https://soilsidekickpro.com/api-docs
-2. Choose your plan (Starter, Pro, Enterprise)
-3. Get your API key
+**Production:** [Subscribe →](https://buy.stripe.com/14A7sL30y8bR2F4fbgaMU02) for instant API key via Stripe checkout
 
----
+## 💰 Pricing
 
-## 📦 Installation
+### Free Tier — No Credit Card
+- **Test key:** `leaf-test-370df0a2e62e`
+- **Free header:** `x-free-tier: true`
+- **Includes:** Basic soil analysis, county lookup, TurboQuant check
+- **Try it:** [soilcertify.com →](https://soilcertify.com)
 
-### **Method 1: Node-RED Palette Manager (Recommended)**
-1. Open Node-RED (usually at http://localhost:1880)
-2. Go to **Menu → Manage Palette**
-3. Click **Install** tab
-4. Search for `node-red-contrib-leafengines`
-5. Click **Install**
+### Pay-As-You-Go
 
-### **Method 2: npm CLI**
-```bash
-npm install node-red-contrib-leafengines
-```
+| Tier | Price | Per-Call Rate | What You Get | Buy |
+|------|-------|--------------|--------------|-----|
+| Commoditized | $0.50/bundle | $0.001/call | Basic soil/weather, county lookup | [Buy →](https://buy.stripe.com/3cIdR99oWajZdjI6EKaMU07) |
+| Enhanced | $1.50/bundle | $0.003/call | Environmental impact, crop suitability, water quality | [Buy →](https://buy.stripe.com/7sY28reJg1NtenM8MSaMU0b) |
+| Proprietary | $5.00/bundle | $0.010/call | Planting optimization, carbon credits, VRT | [Buy →](https://buy.stripe.com/3cIeVd9oW1NtgvU1kqaMU09) |
+| Exclusive | $10.00/bundle | $0.020/call | Patent-pending environmental compatibility scoring | [Buy →](https://buy.stripe.com/6oU4gzbx40Jp6Vk1kqaMU0a) |
 
-### **Method 3: Manual Installation**
-```bash
-cd ~/.node-red
-npm install node-red-contrib-leafengines
-```
+### Monthly Subscriptions
 
----
+| Plan | Price | Included Calls | Best For | Subscribe |
+|------|-------|---------------|----------|-----------|
+| **Founder Starter** | $10/mo → lifetime $49/mo | 10,000/mo | Solo developers, prototyping | [Subscribe →](https://buy.stripe.com/14A7sL30y8bR2F4fbgaMU02) |
+| **Founder Pro** | $49/mo → lifetime $149/mo | 35,000/mo | Production apps, teams | [Subscribe →](https://buy.stripe.com/cNi3cv1WuajZcfE7IOaMU03) |
+| Starter | $149/mo | 10,000/mo | Solo developers | [Subscribe →](https://buy.stripe.com/5kQ6oHcB88bR93s8MSaMU04) |
+| Pro | $499/mo | 35,000/mo | Production apps, teams | [Subscribe →](https://buy.stripe.com/14A6oH7gO3VBcfE1kqaMU05) |
+| Enterprise | $1,999/mo | 175,000+/mo | White-label, SLA, OEM | [Subscribe →](https://buy.stripe.com/eVqaEXfNkajZ6Vk0gmaMU06) |
+| Enterprise Bundle | $3,499/mo | 685,000/mo | Large OEM, max volume | Contact: sales@leafengines.com |
 
-## 🎯 Production Use Cases & Examples
+> ⏰ **Founder pricing expires June 1, 2026.** First 100 customers lock lifetime rates.
 
-### **📊 12 Production-Ready Implementations:**
-1. **Soil Analysis** (`soil.js`) - Real-time USDA soil monitoring
-2. **Crop Recommendations** (`crop.js`) - Multi-factor crop planning
-3. **Precision Irrigation** (`water.js`) - Weather-based water optimization (30% savings)
-4. **Carbon Credits** (`carbon.js`) - Emissions tracking & certification
-5. **Weather Integration** (`weather.js`) - Multi-source weather data
-6. **Batch Processing** (`batch.js`) - Large-scale farm data workflows
-7. **Prescription Maps** (`prescription.js`) - Variable rate applications
-8. **Data Queries** (`query.js`) - Advanced query patterns
-9. **Configuration** (`config.js`) - Environment management
-10. **Quick Testing** (`basic-test.js`) - Connectivity verification
+### International Pricing
 
-**Download:** [LeafEngines_NodeRED_Use_Cases_By_Tier.pdf](examples/LeafEngines_NodeRED_Use_Cases_By_Tier.pdf) - Complete guide with tiered implementation strategies
-
-**Perfect for:**
-- Agricultural IoT developers building sensor networks
-- Farm automation engineers optimizing operations
-- Sustainability consultants tracking carbon credits
-- Research institutions collecting standardized data
-- Precision agriculture startups scaling solutions
-
----
-
-## 🌐 Global IoT & Automation Pricing
-
-Node-RED users deploy automation worldwide. Our pricing supports your global IoT deployments:
-
-**Subscription Plans (Monthly):**
-
-| Region | Starter | Pro | Local Payment Options |
+| Region | Starter | Pro | Local Payment Methods |
 |--------|---------|-----|----------------------|
-| **United States** | $49 | $149 | Card, Apple Pay, Google Pay |
-| **European Union** | €45 | €135 | Klarna, iDEAL, EPS, Apple/Google Pay |
-| **United Kingdom** | £38 | £115 | Afterpay/Clearpay, Apple/Google Pay |
-| **Australia** | AU$75 | AU$225 | Afterpay, Apple/Google Pay |
-| **International** | $49* | $149* | Credit Cards, Apple/Google Pay |
-
-*Equivalent local currency at checkout
-
-**Why Local Pricing Matters for IoT:**
-- Deploy sensors globally with predictable local costs
-- Local payment methods reduce friction for team purchases
-
----
+| **United States** | $49/mo | $149/mo | Card, Apple Pay, Google Pay |
+| **European Union** | €45/mo (VAT incl.) | €135/mo (VAT incl.) | Klarna, iDEAL, EPS, Apple/Google Pay |
+| **United Kingdom** | £38/mo (VAT incl.) | £115/mo (VAT incl.) | Afterpay/Clearpay, Apple/Google Pay |
+| **Australia** | AU$75/mo (GST incl.) | AU$225/mo (GST incl.) | Afterpay, Apple/Google Pay |
 
 ## 🔧 Available Nodes
 
-### **Configuration Nodes**
-- **LeafEngines Config** - API key management and connection settings
+### Configuration
+- **LeafEngines Config** — API key management and connection settings
 
-### **Specialized Data Nodes**
-- **LeafEngines Soil** - USDA soil composition by county FIPS (Free tier)
-- **LeafEngines Weather** - Live weather and soil fusion data (Starter tier)
-- **LeafEngines Water** - EPA water quality monitoring and analytics (Starter tier)
-- **LeafEngines Crop** - AI crop recommendations, planting calendars, and plant identification (Starter/Pro tier)
-- **LeafEngines Carbon** - Carbon credit estimation with practice change analysis (Pro tier)
-- **LeafEngines Prescription** - Variable-rate prescription generation (Pro tier)
+### Data Nodes
+- **LeafEngines Soil** — USDA soil composition by county FIPS (Free tier)
+- **LeafEngines Weather** — Live weather and soil fusion data (Starter tier)
+- **LeafEngines Water** — EPA water quality monitoring (Starter tier)
+- **LeafEngines Crop** — AI crop recommendations and plant identification (Starter/Pro tier)
+- **LeafEngines Carbon** — Carbon credit estimation (Pro tier)
+- **LeafEngines Prescription** — Variable-rate prescription generation (Pro tier)
 
-### **Optimization Nodes**
-- **LeafEngines Batch** - Batch multiple API calls into single requests (optimizes rate limits)
-- **LeafEngines Query** - Generic node for any LeafEngines endpoint
+### Optimization Nodes
+- **LeafEngines Batch** — Batch multiple API calls into single requests
+- **LeafEngines Query** — Generic node for any LeafEngines endpoint
 
-### **Enterprise Nodes**
-- **LeafEngines Environmental** - Environmental impact scoring and risk assessment
-- **LeafEngines Satellite** - Google Earth Engine satellite integration
-- **LeafEngines AI Chat** - Advanced conversational AI
-- **LeafEngines Visual** - Visual crop analysis and diagnostics
-
----
+### Enterprise Nodes
+- **LeafEngines Environmental** — Environmental impact scoring and risk assessment
+- **LeafEngines Satellite** — Google Earth Engine satellite integration
+- **LeafEngines AI Chat** — Advanced conversational AI
+- **LeafEngines Visual** — Visual crop analysis and diagnostics
 
 ## 📖 Example Flows
 
-### **1. Automated Soil Health Monitoring**
-```javascript
-// Flow: Daily soil analysis with alerting
-[schedule: daily 8am] → [LeafEngines Soil] → [function: check thresholds] → [switch: alert if needed] → [email/sms alert]
+### Automated Soil Health Monitoring
+```
+[schedule: daily 8am] → [LeafEngines Soil] → [check thresholds] → [alert if needed] → [email/sms]
 ```
 
-### **2. Irrigation Optimization**
-```javascript
-// Flow: Smart irrigation scheduling
-[weather forecast] → [LeafEngines Soil] → [LeafEngines Water] → [function: calculate irrigation] → [sprinkler controller]
+### Irrigation Optimization
+```
+[weather forecast] → [LeafEngines Soil] → [LeafEngines Water] → [calculate irrigation] → [sprinkler controller]
 ```
 
-### **3. Carbon Credit Reporting**
-```javascript
-// Flow: Automated carbon credit calculation
-[field sensor data] → [LeafEngines Carbon] → [function: format report] → [Google Sheets] → [email report]
+### Carbon Credit Reporting
+```
+[field sensor data] → [LeafEngines Carbon] → [format report] → [Google Sheets] → [email report]
 ```
 
-### **4. Variable-Rate Application**
-```javascript
-// Flow: Real-time prescription generation
-[GPS position] → [LeafEngines Soil] → [LeafEngines Prescription] → [function: format for equipment] → [sprayer controller]
-```
+## 🎯 Use Cases
 
----
+### For Agronomists & Soil Scientists
+- **Automated soil monitoring** — Scheduled analysis with threshold alerting
+- **Carbon credit reporting** — Emissions tracking and certification
+- **Get professional reports without coding:** [soilcertify.com →](https://soilcertify.com)
 
-## 📊 Rate Limits & Batch Optimization
+### For Agricultural Consultants
+- **Client-ready workflows** — Automated analysis and report generation
+- **Sell reports to clients:** [soilcertify.com →](https://soilcertify.com) (172%+ profit margin at $29/mo)
 
-### **Free Tier Limits:**
-- **10 requests/minute** - Perfect for testing and small projects
-- **1,000 requests/day** - Enough for daily monitoring
-- **Batch optimization** - 5x improvement with batching
-
-### **Batch Optimization Examples:**
-1. **Soil + Water + Weather Analysis** (3 calls) → **1 batch request** (66% reduction)
-2. **Multi-County Comparison** (5 counties) → **1 batch request** (80% reduction)
-3. **Full Field Analysis** (8 endpoints) → **2 batch requests** (75% reduction)
-
-See `examples/batch-optimization.json` for complete implementation.
-
----
+### For IoT & Edge Engineers
+- **Sensor network intelligence** — Local processing for agricultural IoT
+- **Precision agriculture** — Variable-rate prescription generation
+- **Farm automation** — Irrigation, pest management, yield prediction
+- **Offline capability** — Works in remote/deep canopy areas
 
 ## 🔗 MCP Protocol Integration
 
 LeafEngines implements the Model Context Protocol (MCP), enabling AI agents to discover and invoke agricultural intelligence tools natively.
 
-### **Claude Desktop Configuration**
-Add to your `claude_desktop_config.json`:
+**Claude Desktop Configuration:**
 ```json
 {
   "mcpServers": {
     "leafengines": {
       "transport": "streamable-http",
       "url": "https://wzgnxkoeqzvueypwzvyn.supabase.co/functions/v1/mcp-server",
-      "headers": {
-        "x-api-key": "leaf-test-370df0a2e62e"
-      }
+      "headers": { "x-api-key": "leaf-test-370df0a2e62e" }
     }
   }
 }
 ```
 
----
+## 🔗 Related Packages
 
-## 🎯 QGIS Plugin Officially Approved!
+- **[MCP Server](https://www.npmjs.com/package/@ancientwhispers54/leafengines-mcp-server)** — Claude Desktop, Cursor integration
+- **[n8n Nodes](https://www.npmjs.com/package/n8n-nodes-leafengines)** — n8n automation
+- **[QGIS Plugin](https://plugins.qgis.org/plugins/qgis_leafengines/)** — 500,000+ QGIS users (Plugin ID 4987)
+- **[SoilCertify](https://soilcertify.com)** — Professional soil reports, no coding required
 
-**Plugin ID:** 4987 (LeafEngines Agricultural Intelligence)  
-**Version:** 1.0.2 Experimental  
-**Status:** ✅ **PUBLICLY AVAILABLE**  
-**Download:** https://plugins.qgis.org/plugins/qgis_leafengines/version/1.0.2/download/
+## 📞 Support
 
-### **Key Features:**
-- **USDA soil data** - Soil composition, pH, N/P/K recommendations
-- **Free tier access** - Try in QGIS with no API key
-- **International support** - 8 countries and growing
-
----
-
-## 🤝 Support & Community
-
-- **Technical Support**: support@soilsidekickpro.com
-- **Community Forum**: [r/NodeRED discussions](https://reddit.com/r/nodered)
-- **API Documentation**: [soilsidekickpro.com/api-docs](https://soilsidekickpro.com/api-docs)
-- **GitHub Issues**: [github.com/QWarranto/node-red-contrib-leafengines/issues](https://github.com/QWarranto/node-red-contrib-leafengines/issues)
-
-**Response Time:** We aim to respond within 24 hours to all support requests.
-
----
+- **API Documentation:** [app.soilsidekickpro.com/api-docs](https://app.soilsidekickpro.com/api-docs)
+- **Node-RED Community:** [reddit.com/r/nodered](https://reddit.com/r/nodered)
+- **GitHub Issues:** [github.com/QWarranto/node-red-contrib-leafengines/issues](https://github.com/QWarranto/node-red-contrib-leafengines/issues)
+- **Email:** support@soilsidekickpro.com
+- **Partnerships:** partnerships@leafengines.com
 
 ## 📄 License
 
-MIT License - see [LICENSE](LICENSE) file for details.
+MIT License — integration code is open source. API service has commercial terms with free tier. Core algorithms are patent-protected (U.S. #19/320,727, #19/544,827).
 
 ---
 
-## 🌱 Start Your Agricultural Automation Journey
-
-**Try it now with our free tier - no API key needed!**
-
-1. **Install the package:** `npm install node-red-contrib-leafengines`
-2. **Try free tier:** Use `x-free-tier: true` header
-3. **Build your flow:** Start with soil analysis
-4. **Scale as needed:** Upgrade when you exceed free limits
-
-**Join 1,000+ Node-RED developers** already exploring agricultural intelligence automation!
+🌱 **LeafEngines™** | SoilSidekick Pro® | SoilCertify | SoilTech Suite, Inc.
+*Space gives the picture. We give the truth.*
