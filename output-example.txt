@@ -1,0 +1,23 @@
+Debug Panel - Soil Analysis Output
+
+{
+  "county_fips": "13001",
+  "soil_texture": "Clay Loam",
+  "organic_matter": 2.4,
+  "ph_level": 6.8,
+  "drainage_class": "Well drained",
+  "nutrients": {
+    "nitrogen": 45,
+    "phosphorus": 32,
+    "potassium": 210
+  },
+  "cache_info": {
+    "level": "L2",
+    "age_seconds": 3600,
+    "stale": false
+  },
+  "confidence_interval": 0.95
+}
+
+Message: Soil analysis for Appling County, GA
+Cache: L2 (1 hour old, 95% confidence)

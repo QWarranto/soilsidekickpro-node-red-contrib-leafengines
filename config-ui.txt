@@ -1,0 +1,11 @@
+LeafEngines Configuration
+
+API Key: ak_sandbox_************
+Tier: [Free] ▼
+Base URL: https://api.leafengines.com/v1
+Cache TTL: 3600 seconds
+Enable Batch Optimization: ✓
+
+Help: Get free API key at soilsidekickpro.com/podcast
+
+[Save] [Cancel]

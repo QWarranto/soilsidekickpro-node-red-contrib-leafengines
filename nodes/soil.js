@@ -19,7 +19,8 @@ module.exports = function(RED) {
             return;
         }
         
-        if (!this.config.isValidKey()) {
+        // Allow free-tier access (no API key) or valid API key
+        if (this.config.apiKey && !this.config.isValidKey()) {
             this.error('Invalid LeafEngines API key format');
             return;
         }
@@ -46,7 +47,7 @@ module.exports = function(RED) {
                     county_fips: countyFips
                 }, {
                     headers: {
-                        'x-api-key': node.config.apiKey,
+                        ...(node.config.apiKey ? { 'x-api-key': node.config.apiKey } : { 'x-free-tier': 'true' }),
                         'Content-Type': 'application/json'
                     },
                     timeout: 30000

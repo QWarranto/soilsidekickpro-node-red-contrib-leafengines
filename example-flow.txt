@@ -1,0 +1,13 @@
+Soil Health Monitor Flow
+
+[Inject: Every 24 hours]
+     ↓
+[leafengines-soil: County FIPS 13001]
+     ↓
+[Function: Process soil data]
+     ↓
+[Debug: Show analysis]
+     ↓
+[Email: Alert if issues]
+
+Automated daily soil analysis with email alerts.

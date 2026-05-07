@@ -1,0 +1,14 @@
+Node-RED Palette - LeafEngines Category
+
+[leafengines] category contains:
+• leafengines-config      - Configuration node
+• leafengines-soil        - Soil analysis (Free tier)
+• leafengines-weather     - Weather & soil fusion (Starter)
+• leafengines-water       - Water quality monitoring (Starter)
+• leafengines-crop        - Crop intelligence (Starter/Pro)
+• leafengines-carbon      - Carbon credit calculation (Pro)
+• leafengines-prescription - Variable-rate prescriptions (Pro)
+• leafengines-batch       - Batch optimization (All tiers)
+• leafengines-query       - Generic query (All endpoints)
+
+8 specialized agricultural intelligence nodes.
