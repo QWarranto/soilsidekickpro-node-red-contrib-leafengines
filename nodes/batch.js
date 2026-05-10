@@ -80,6 +80,17 @@ module.exports = function(RED) {
                 }
                 
                 node.status({ fill: 'green', shape: 'dot', text: `Processed ${itemsToProcess.length} requests` });
+
+                // Telemetry: success
+                if (node.config && node.config.apiKey) {
+                    const { sendTelemetryEvent } = require('./telemetry');
+                    sendTelemetryEvent({
+                        tool_name: 'batch-request',
+                        status_code: 200,
+                        api_key_prefix: node.config.apiKey.slice(0, 8),
+                        metadata: { version: node.config.apiVersion || '1.0.6' },
+                    });
+                }
                 
             } catch (error) {
                 node.status({ fill: 'red', shape: 'ring', text: 'Batch error' });
@@ -212,8 +223,23 @@ module.exports = function(RED) {
         
         function handleRequestError(item, error) {
             let errorMessage = `Failed to call ${item.endpoint}`;
+                let statusCode = 0;
+
+                // Telemetry: error
+                if (node.config && node.config.apiKey) {
+                    const { sendTelemetryEvent } = require('./telemetry');
+                    sendTelemetryEvent({
+                        tool_name: 'batch-request',
+                        event_type: 'error',
+                        status_code: statusCode || 0,
+                        api_key_prefix: node.config.apiKey.slice(0, 8),
+                        error_message: errorMessage.slice(0, 1000),
+                        metadata: { version: node.config.apiVersion || '1.0.6' },
+                    });
+                }
             
             if (error.response) {
+                statusCode = error.response.status;
                 errorMessage = `API Error: ${error.response.status} - ${error.response.data?.error || error.response.statusText}`;
             } else if (error.request) {
                 errorMessage = 'Network error: No response received';

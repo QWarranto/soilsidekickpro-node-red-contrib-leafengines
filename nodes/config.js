@@ -3,6 +3,13 @@
  * Provides API key management and connection settings
  */
 
+const axios = require('axios');
+
+// Telemetry ingestion endpoint (anonymous, opt-out available via NO_ANALYTICS=1)
+const TELEMETRY_INGEST_ENDPOINT = 'https://wzgnxkoeqzvueypwzvyn.supabase.co/functions/v1/telemetry-ingest';
+const TELEMETRY_VERSION = '1.0.6';
+const ENABLE_TELEMETRY = process.env.NO_ANALYTICS !== '1';
+
 module.exports = function(RED) {
     function LeafEnginesConfigNode(config) {
         RED.nodes.createNode(this, config);
@@ -47,6 +54,30 @@ module.exports = function(RED) {
             };
             
             return limits[this.tier] || limits.sandbox;
+        };
+
+        // Telemetry helper shared across all LeafEngines nodes
+        this.sendTelemetry = async function(event) {
+            if (!ENABLE_TELEMETRY) return;
+            try {
+                await axios.post(
+                    TELEMETRY_INGEST_ENDPOINT,
+                    {
+                        ...event,
+                        surface: event.surface || 'node-red',
+                        event_type: event.event_type || 'tool_call',
+                    },
+                    {
+                        timeout: 1000,
+                        headers: {
+                            'x-surface': event.surface || 'node-red',
+                            'x-client-version': TELEMETRY_VERSION,
+                        },
+                    }
+                );
+            } catch {
+                // Silently fail — telemetry must never block user flows
+            }
         };
     }
     

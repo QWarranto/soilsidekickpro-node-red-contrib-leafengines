@@ -105,6 +105,17 @@ module.exports = function(RED) {
                 });
                 
                 node.status({ fill: 'green', shape: 'dot', text: `${mode.replace('_', ' ')} received` });
+
+                // Telemetry: success
+                if (node.config && node.config.apiKey) {
+                    const { sendTelemetryEvent } = require('./telemetry');
+                    sendTelemetryEvent({
+                        tool_name: 'multi-parameter-planting-calendar',
+                        status_code: 200,
+                        api_key_prefix: node.config.apiKey.slice(0, 8),
+                        metadata: { version: node.config.apiVersion || '1.0.6' },
+                    });
+                }
                 
                 // Process response
                 const data = response.data;
@@ -189,7 +200,22 @@ module.exports = function(RED) {
                 node.status({ fill: 'red', shape: 'ring', text: 'Error' });
                 
                 let errorMessage = `Failed to get ${node.mode.replace('_', ' ')} data`;
+                let statusCode = 0;
+
+                // Telemetry: error
+                if (node.config && node.config.apiKey) {
+                    const { sendTelemetryEvent } = require('./telemetry');
+                    sendTelemetryEvent({
+                        tool_name: 'multi-parameter-planting-calendar',
+                        event_type: 'error',
+                        status_code: statusCode || 0,
+                        api_key_prefix: node.config.apiKey.slice(0, 8),
+                        error_message: errorMessage.slice(0, 1000),
+                        metadata: { version: node.config.apiVersion || '1.0.6' },
+                    });
+                }
                 if (error.response) {
+                    statusCode = error.response.status;
                     errorMessage = `API Error: ${error.response.status} - ${error.response.data?.error || error.response.statusText}`;
                     node.warn(`LeafEngines API error: ${error.response.status} - ${JSON.stringify(error.response.data)}`);
                 } else if (error.request) {

@@ -74,6 +74,17 @@ module.exports = function(RED) {
                 }
                 
                 node.status({ fill: 'green', shape: 'dot', text: `${endpoint} complete` });
+
+                // Telemetry: success
+                if (node.config && node.config.apiKey) {
+                    const { sendTelemetryEvent } = require('./telemetry');
+                    sendTelemetryEvent({
+                        tool_name: 'generic-query',
+                        status_code: 200,
+                        api_key_prefix: node.config.apiKey.slice(0, 8),
+                        metadata: { version: node.config.apiVersion || '1.0.6' },
+                    });
+                }
                 
                 // Process response
                 let output = response.data;
@@ -128,9 +139,24 @@ module.exports = function(RED) {
                 node.status({ fill: 'red', shape: 'ring', text: 'Error' });
                 
                 let errorMessage = `Failed to call ${node.endpoint}`;
+                let statusCode = 0;
+
+                // Telemetry: error
+                if (node.config && node.config.apiKey) {
+                    const { sendTelemetryEvent } = require('./telemetry');
+                    sendTelemetryEvent({
+                        tool_name: 'generic-query',
+                        event_type: 'error',
+                        status_code: statusCode || 0,
+                        api_key_prefix: node.config.apiKey.slice(0, 8),
+                        error_message: errorMessage.slice(0, 1000),
+                        metadata: { version: node.config.apiVersion || '1.0.6' },
+                    });
+                }
                 let errorDetails = {};
                 
                 if (error.response) {
+                    statusCode = error.response.status;
                     errorMessage = `API Error (${error.response.status}): ${error.response.data?.error || error.response.statusText}`;
                     errorDetails = {
                         status: error.response.status,

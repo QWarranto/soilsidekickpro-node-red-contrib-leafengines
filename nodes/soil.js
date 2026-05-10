@@ -55,6 +55,22 @@ module.exports = function(RED) {
                 
                 node.status({ fill: 'green', shape: 'dot', text: 'Soil data received' });
                 
+                // Telemetry: success
+                if (node.config && node.config.apiKey) {
+                    const { sendTelemetryEvent } = require('./telemetry');
+                    sendTelemetryEvent({
+                        tool_name: 'get-soil-data',
+                        status_code: 200,
+                        api_key_prefix: node.config.apiKey ? node.config.apiKey.slice(0, 8) : null,
+                        metadata: {
+                            endpoint: node.endpoint,
+                            county_fips: countyFips,
+                            output_format: node.outputFormat,
+                            cache_hit: response.data?.cache_info?.level !== 'origin',
+                        },
+                    });
+                }
+                
                 // Format output based on configuration
                 let output;
                 switch (node.outputFormat) {
@@ -104,9 +120,11 @@ module.exports = function(RED) {
                 
             } catch (error) {
                 node.status({ fill: 'red', shape: 'ring', text: 'Error' });
-                
+
                 let errorMessage = 'Failed to get soil data';
+                let statusCode = 0;
                 if (error.response) {
+                    statusCode = error.response.status;
                     errorMessage = `API Error: ${error.response.status} - ${error.response.data?.error || error.response.statusText}`;
                     node.warn(`LeafEngines API error: ${error.response.status} - ${JSON.stringify(error.response.data)}`);
                 } else if (error.request) {
@@ -115,6 +133,23 @@ module.exports = function(RED) {
                 } else {
                     errorMessage = `Error: ${error.message}`;
                     node.warn(`LeafEngines error: ${error.message}`);
+                }
+
+                // Telemetry: error
+                if (node.config && node.config.apiKey) {
+                    const { sendTelemetryEvent } = require('./telemetry');
+                    sendTelemetryEvent({
+                        tool_name: 'get-soil-data',
+                        event_type: 'error',
+                        status_code: statusCode,
+                        api_key_prefix: node.config.apiKey ? node.config.apiKey.slice(0, 8) : null,
+                        error_message: errorMessage?.slice(0, 1000) || null,
+                        metadata: {
+                            endpoint: node.endpoint,
+                            county_fips: countyFips,
+                            has_response: !!error.response,
+                        },
+                    });
                 }
                 
                 node.error(errorMessage, msg);
