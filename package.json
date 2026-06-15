@@ -1,7 +1,7 @@
 {
   "name": "node-red-contrib-leafengines",
   "version": "1.0.6",
-  "description": "Node-RED nodes for LeafEngines Agricultural Intelligence - Free tier access, no API key needed. USDA soil data, EPA water quality, crop recommendations. Works immediately with test key leaf-test-370df0a2e62e. Professional soil reports at soilcertify.com.",
+  "description": "Node-RED nodes for LeafEngines Agricultural Intelligence - Free tier access, no API key needed. USDA soil data, EPA water quality, crop recommendations. Works immediately with test key leaf-test-370df0a2e62e. Partner program: sell $100–200 soil reports. You buy each for $25.",
   "keywords": [
     "node-red",
     "leafengines",

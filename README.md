@@ -12,7 +12,7 @@
 - [Starter — $149/mo →](https://buy.stripe.com/5kQ6oHcB88bR93s8MSaMU04)
 - [Pro — $499/mo →](https://buy.stripe.com/14A6oH7gO3VBcfE1kqaMU05)
 
-**Get a professional soil report (no coding required):** [soilcertify.com →](https://soilcertify.com)
+**Partner Program:** Stop building for free. Use our API to sell $100–200 soil reports to local farmers, drone pilots, and GIS communities. You buy each report for $25. [Join our Partner Program →](https://soilcertify.com)
 
 ---
 
@@ -86,7 +86,6 @@ curl -H "x-api-key: leaf-test-370df0a2e62e" \
 | Pro | $499/mo | Higher throughput + priority support | Growing integrations, MCP servers | [Subscribe →](https://buy.stripe.com/14A6oH7gO3VBcfE1kqaMU05) |
 | Enterprise | $1,999/mo | Unlimited volume + custom SLAs + white-label | OEM partners, enterprise deployments | [Subscribe →](https://buy.stripe.com/eVqaEXfNkajZ6Vk0gmaMU06) |
 
-> **Metered pricing effective June 1, 2026.** Pay only for AI calls you make. Data lookups are always free.
 
 ### International Pricing
 
@@ -142,11 +141,11 @@ curl -H "x-api-key: leaf-test-370df0a2e62e" \
 ### For Agronomists & Soil Scientists
 - **Automated soil monitoring** — Scheduled analysis with threshold alerting
 - **Carbon credit reporting** — Emissions tracking and certification
-- **Get professional reports without coding:** [soilcertify.com →](https://soilcertify.com)
+- **Partner Program:** [Sell soil reports to your clients →](https://soilcertify.com)
 
 ### For Agricultural Consultants
 - **Client-ready workflows** — Automated analysis and report generation
-- **Sell reports to clients:** [soilcertify.com →](https://soilcertify.com) (172%+ profit margin at $29/mo)
+- **Sell reports to clients:** [Join Partner Program →](https://soilcertify.com) (4× markup on $25 wholesale)
 
 ### For IoT & Edge Engineers
 - **Sensor network intelligence** — Local processing for agricultural IoT
