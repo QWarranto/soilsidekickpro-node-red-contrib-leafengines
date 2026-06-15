@@ -6,7 +6,7 @@ Welcome to the LeafEngines Contributor Program! This is an ongoing, open invitat
 
 The agricultural technology market is projected to reach $41.2 billion by 2028 (MarketsandMarkets). Contributors to the LeafEngines ecosystem position themselves at the intersection of AI, agriculture, and environmental intelligence — a convergence that is creating entirely new categories of software products and career opportunities.
 
-**The first 100 API keys (the Founders Series, ak_0001–ak_0100) carry lifetime preferential pricing. Active contributors are prioritized for Founders key allocation.**
+**Active contributors receive priority API key allocation and complimentary tier upgrades based on contribution level.**
 
 ## Contribution Tracks
 
@@ -182,7 +182,7 @@ Study the existing nodes to understand the patterns:
   
 - **Gold Contributor** (6 accepted contributions)
   - Conference speaking opportunity
-  - Priority for Founders Series key
+  - Priority API key allocation
   - 12 months Enterprise tier access
   
 - **Platinum Contributor** (12+ accepted contributions)
