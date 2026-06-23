@@ -14,6 +14,9 @@
 
 **Partner Program:** Stop building for free. Use our API to sell $100–200 soil reports to local farmers, drone pilots, and GIS communities. You buy each report for $25. [Join our Partner Program →](https://soilcertify.com)
 
+**Preliminary Site Scan - SoilCertify**
+Quick geotechnical overview with essential soil data and basic risk indicators.
+https://buy.stripe.com/fZu00j44C0Jp4Nc3syaMU0f
 ---
 
 ## 🌾 What It Does
@@ -58,7 +61,7 @@ curl -H "x-api-key: leaf-test-370df0a2e62e" \
   -d '{"county_fips": "12086"}'
 ```
 
-**Production:** [Subscribe →](https://buy.stripe.com/14A7sL30y8bR2F4fbgaMU02) for instant API key via Stripe checkout
+**Production:** [Subscribe →](https://buy.stripe.com/5kQ6oHcB88bR93s8MSaMU04) for instant API key via Stripe checkout
 
 ## 💰 Pricing
 
@@ -72,9 +75,9 @@ curl -H "x-api-key: leaf-test-370df0a2e62e" \
 
 | Pack | Price | Credits | Per-Call Rate | Best For | Buy |
 |------|-------|---------|---------------|----------|-----|
-| Starter | $10.00 | 1,000 | $0.01/call | Low-volume users, hobby developers | [Buy →](https://buy.stripe.com/3cIdR99oWajZdjI6EKaMU07) |
-| Pro | $25.00 | 5,000 | $0.005/call | Regular users, n8n/Node-RED integrations | [Buy →](https://buy.stripe.com/7sY28reJg1NtenM8MSaMU0b) |
-| Enterprise | $50.00 | 25,000 | $0.002/call | High-volume users, MCP/Clawhub clients | [Buy →](https://buy.stripe.com/3cIeVd9oW1NtgvU1kqaMU09) |
+| Starter | $10.00 | 1,000 | $0.01/call | Low-volume users, hobby developers | [Buy →](https://buy.stripe.com/bJe3cvfNk77N5RgfbgaMU0e) |
+| Pro | $25.00 | 5,000 | $0.005/call | Regular users, n8n/Node-RED integrations | [Buy →](https://buy.stripe.com/cNi9AT1Wu0Jp93s8MSaMU0c) |
+| Enterprise | $50.00 | 25,000 | $0.002/call | High-volume users, MCP/Clawhub clients | [Buy →](https://buy.stripe.com/28EeVd9oWeAf2F48MSaMU0d) |
 
 > One-time purchase. Credits never expire. All endpoints unlocked. Data lookups always free.
 
@@ -84,7 +87,7 @@ curl -H "x-api-key: leaf-test-370df0a2e62e" \
 |------|-------|--------------|----------|-----------|
 | Starter | $149/mo | Unlimited AI calls + email support | Small teams, production n8n workflows | [Subscribe →](https://buy.stripe.com/5kQ6oHcB88bR93s8MSaMU04) |
 | Pro | $499/mo | Higher throughput + priority support | Growing integrations, MCP servers | [Subscribe →](https://buy.stripe.com/14A6oH7gO3VBcfE1kqaMU05) |
-| Enterprise | $1,999/mo | Unlimited volume + custom SLAs + white-label | OEM partners, enterprise deployments | [Subscribe →](https://buy.stripe.com/eVqaEXfNkajZ6Vk0gmaMU06) |
+| Enterprise | $1,999/mo | Unlimited volume + custom SLAs + white-label | OEM partners, enterprise deployments | [Subscribe →](https://buy.stripe.com/14A6oH7gO3VBcfE1kqaMU05) |
 
 
 ### International Pricing
