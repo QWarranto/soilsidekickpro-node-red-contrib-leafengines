@@ -1,5 +1,7 @@
 # node-red-contrib-leafengines — Agricultural Intelligence for Node-RED
 
+> 🏆 **Global Startup Awards 2026 — North America Regional Nominee**
+
 **Soil analysis, crop recommendations, and environmental intelligence** for Node-RED IoT/edge automation. Patent-protected algorithms. Works with free test key — no signup required.
 
 ## ⚡ Get Started Now
